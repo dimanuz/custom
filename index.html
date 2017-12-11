@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Cells on web-components(template)</title>
+    <link rel="stylesheet" href="cells.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+
+    <script>
+        // Определение прототипа, который базируется на прототипе HTML элемента
+        var cellsComponentProto = Object.create(HTMLElement.prototype);
+
+        // Определение функции обратного вызова, которая сработает после создания элемента
+        cellsComponentProto.createdCallback = function () {
+            this.innerHTML = "<div class=\"cells\">Table</div>";
+        };
+
+        // Регистрация нового элемента.
+        // При определении имени компонента, необходимо обязательно в имени указать хотя бы один символ '-'
+        var HelloWorldComponent = document.registerElement("cells-component", {
+            prototype: cellsComponentProto
+        });
+    </script>
+
+    <cells-component>
+    </cells-component>
+
+    <script src="cells.js"></script>
+
+</body>
+
+</html>
+
