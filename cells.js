@@ -151,6 +151,6 @@ class Cells {
 
 window.onload = function() {
 
-    let DOMCells = document.querySelectorAll(".cells");
-    DOMCells.forEach(function (c) {new Cells(c)});
+    let DOMCell = document.querySelector(".cells");
+    new Cells(DOMCell);
 };
